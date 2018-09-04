@@ -128,6 +128,18 @@ services:
         type: basic
         users:
           admin: adminadmin
+  alert:
+    enabled: true
+    email:
+      subject: ${email.subject}
+      host: ${email.host}
+      port: ${email.port}
+      from: ${email.from}
+      username: ${email.username}
+      password: ${email.password}
+    hazelcast:
+      config:
+        path: ${gravitee.home}/config/hazelcast.xml
 
 # Analytics repository is used to store all reporting, metrics, healthchecks stored by gateway instances
 # This is the default configuration using Elasticearch
